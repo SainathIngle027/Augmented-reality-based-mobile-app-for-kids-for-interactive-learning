@@ -9,14 +9,9 @@ Objectives :<br>
 -To develop virtual objects that can be placed on any solid surface.<br>
 -To develop a voice generated output for better understanding.<br>
 
-[Project Video Link ]("https://drive.google.com/file/d/1HvctoSLCWnJAtC7sJRdVYTWRC69NguHZ/view?usp=drive_link")
+[Project Video Link ](https://drive.google.com/file/d/1HvctoSLCWnJAtC7sJRdVYTWRC69NguHZ/view?usp=drive_link)
 
-<video width="320" height="240" controls loop>
-  <source src="https://drive.google.com/file/d/1HvctoSLCWnJAtC7sJRdVYTWRC69NguHZ/view?usp=drive_link" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
-![Alt Text]("https://drive.google.com/file/d/1HvctoSLCWnJAtC7sJRdVYTWRC69NguHZ/view?usp=drive_link")
 
 
 
