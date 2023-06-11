@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">AR Learnix</string>
+    <string name="animals">Animals</string>
+    <string name="next">next</string>
+    <string name="deer">Deer</string>
+    <string name="cow">Cow</string>
+    <string name="dog">Dog</string>
+    <string name="fox">Fox</string>
+    <string name="horse">Horse</string>
+    <string name="lion">Lion</string>
+    <string name="tiger">Tiger</string>
+    <string name="zebra">Zebra</string>
+    <string name="cat">Cat</string>
+    <string name="panda">Panda</string>
+    <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
+    <string name="birds">Birds</string>
+    <string name="crow">Crow</string>
+    <string name="macaw">Macaw</string>
+    <string name="back">Back</string>
+    <string name="sanctuary">Sanctuary</string>
+    <string name="zoo_park">Zoo Park</string>
+    <string name="todo3">TODO</string>
+    <string name="todo4">TODO</string>
+    <string name="todo5">TODO</string>
+    <string name="objdet">Object Detection</string>
+    <string name="ojjy">Object Detection</string>
+    <string name="lgt">Login With GOOGLE</string>
+    <string name="tagline">Transforming education through immersive augmented reality experiences</string>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ArActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/objtitle"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#E53935"
+        android:gravity="center"
+        android:textAlignment="center"/>
+
+    <fragment
+        android:layout_width="330dp"
+        android:layout_height="570dp"
+        android:layout_below="@+id/objtitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/arFragment"
+        android:name="com.google.ar.sceneform.ux.ArFragment"
+        tools:layout="@layout/sceneform_ux_fragment_layout" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="110dp"
+        android:layout_height="90dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#FBE9E7"
+        android:clickable="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/speakbt"
+        android:layout_below="@id/arFragment"
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/speckimg"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sound" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/speakbt"
+        android:id="@+id/back"
+        android:text="@string/back"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

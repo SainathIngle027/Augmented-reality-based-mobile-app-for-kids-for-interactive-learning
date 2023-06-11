@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF5FF"
+    tools:context=".InfoActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/titlename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        app:cardBackgroundColor="#6C6EEA"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="20dp">
+
+        <TextView
+            android:id="@+id/objname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:text="Object"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"></TextView>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/objimg"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/titlename"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/loading">
+
+    </ImageView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/infotit"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_below="@id/objimg"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        app:cardBackgroundColor="#F9FBE7"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/objinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:lineSpacingExtra="4dp"
+                    android:textSize="24sp"
+                    android:textStyle="bold"></TextView>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/arpage"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/infotit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="View With AR"
+        android:textStyle="bold"></Button>
+
+
+</RelativeLayout>

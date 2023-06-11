@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEBEE"
+    tools:context=".DetectActivity">
+
+    <TextView
+        android:id="@+id/objtit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/ojjy"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ImgPicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/objtit"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="16dp">
+
+        <ImageView
+            android:id="@+id/preimg"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_below="@id/objtit"
+            android:layout_margin="8dp"
+            android:src="@drawable/image" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:id="@+id/ImgAnly"
+        android:layout_below="@id/ImgPicker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Find Object"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultcard"
+        app:cardCornerRadius="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@id/ImgPicker">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardname"
+                android:text="Object Classified As"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                android:textColor="#DD2C00"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/result"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/resultcard"
+        android:id="@+id/knowinfo"
+        android:text="Know More"
+        android:layout_centerHorizontal="true">
+
+    </Button>
+
+</RelativeLayout>

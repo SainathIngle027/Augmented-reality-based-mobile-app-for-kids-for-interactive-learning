@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "294787125171",
+    "project_id": "ar-learnix",
+    "storage_bucket": "ar-learnix.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294787125171:android:434e57b4cf6cf74c9e45c6",
+        "android_client_info": {
+          "package_name": "com.steelhead.arlearnix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294787125171-bppg55scuc6en4a7ls3oqr9js1cnn3fl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.steelhead.arlearnix",
+            "certificate_hash": "f4313dcde9d67e1848aba01cc8966061da65c102"
+          }
+        },
+        {
+          "client_id": "294787125171-7haloko0c6tefv80pjc07nrt58bcrh4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRR6z4EQ_llkguRIQ48gGrH15tRcmjtns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294787125171-7haloko0c6tefv80pjc07nrt58bcrh4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
