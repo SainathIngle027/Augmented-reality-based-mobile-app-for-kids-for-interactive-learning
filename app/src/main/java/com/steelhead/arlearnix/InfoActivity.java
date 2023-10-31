@@ -3,19 +3,19 @@ package com.steelhead.arlearnix;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 public class InfoActivity extends AppCompatActivity {
@@ -36,11 +36,17 @@ public class InfoActivity extends AppCompatActivity {
         objimg = findViewById(R.id.objimg);
         objinfo =findViewById(R.id.objinfo);
         arpage = findViewById(R.id.arpage);
-
+        ProgressBar loadingProgressBar = findViewById(R.id.loadingProgressBar);
         passname = getIntent().getStringExtra("passname");
         objname.setText(passname.toUpperCase());
 
         passinfo = passname+"info";
+
+
+        // Initially hide the ImageView and show the ProgressBar
+        objimg.setVisibility(View.INVISIBLE);
+        loadingProgressBar.setVisibility(View.VISIBLE);
+
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(passname);
@@ -53,18 +59,25 @@ public class InfoActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 String value = null;
                 if (dataSnapshot.exists()) {
-                    // The object exists in the database
-                    // Perform your logic here
                     value = dataSnapshot.getValue(String.class);
 
+                    // Load the image using Picasso
+                    Picasso.get().load(value).into(objimg, new Callback() {
+                        @Override
+                        public void onSuccess() {
+                            // Image loaded successfully, hide the ProgressBar
+                            loadingProgressBar.setVisibility(View.INVISIBLE);
+                            objimg.setVisibility(View.VISIBLE);
+                        }
+
+                        @Override
+                        public void onError(Exception e) {
+                            // Handle any errors that occur during image loading
+                        }
+                    });
                 } else {
-                    // The object does not exist in the database
-                    // Perform your logic here
-                    value= "https://firebasestorage.googleapis.com/v0/b/ar-learnix.appspot.com/o/Info%20Images%2Fnotfound.png?alt=media&token=a20ef24f-8f33-4039-8e98-737b4148f4d4";
-
+                    value = "https://firebasestorage.googleapis.com/v0/b/ar-learnix.appspot.com/o/Info%20Images%2Fnotfound.png?alt=media&token=a20ef24f-8f33-4039-8e98-737b4148f4d4";
                 }
-
-                Picasso.get().load(value).into(objimg);
             }
             @Override
             public void onCancelled(DatabaseError error) {
@@ -78,7 +91,7 @@ public class InfoActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                String value = null;
+                String value;
                 if (dataSnapshot.exists())
                 {
                     value = dataSnapshot.getValue(String.class);

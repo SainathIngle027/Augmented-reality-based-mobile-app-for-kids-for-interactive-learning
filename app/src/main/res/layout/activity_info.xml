@@ -31,14 +31,23 @@
             android:textStyle="bold"></TextView>
     </androidx.cardview.widget.CardView>
 
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:visibility="visible" />
+
+
     <ImageView
         android:id="@+id/objimg"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@+id/titlename"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/loading">
+        android:layout_marginTop="10dp">
 
     </ImageView>
 

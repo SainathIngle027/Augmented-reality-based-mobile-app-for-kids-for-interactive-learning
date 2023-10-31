@@ -17,7 +17,7 @@ def main(path):
 
     #Object name in array
     object = ["apple", "banana", "car" , "chair" ,"cat","horse" ,"dog","eagle", "fish","deer", "goat","elephant", "owl", "crow", "bat", "hen", "ball", "giraffe", "kangaroo",
-              "lion", "mango", "monkey", "nutria", "orange", "parrot", "pineapple", "queen", "rabbit", "rat", "peacock ", "swans", "tiger"];
+              "lion", "mango", "monkey", "nutria", "orange", "parrot", "pineapple", "queen", "rabbit", "rat", "peacock ", "swans", "tiger"]
     flag = 0
     store = ""
     count = 0

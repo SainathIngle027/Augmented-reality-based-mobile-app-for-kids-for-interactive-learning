@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -17,6 +18,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.io.File;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -28,6 +33,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // Initialize Firebase Authentication
+        FirebaseApp.initializeApp(this);
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
 
         loginbt = findViewById(R.id.loginbt);
 
@@ -73,5 +83,29 @@ public class LoginActivity extends AppCompatActivity {
         finish();
         Intent intent =new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // Delete cache files here
+        deleteCacheFiles();
+    }
+    private void deleteCacheFiles() {
+        try {
+            File cacheDir = getCacheDir();
+            if (cacheDir.isDirectory()) {
+                String[] files = cacheDir.list();
+                for (String file : files) {
+                    File cacheFile = new File(cacheDir, file);
+                    if (cacheFile.delete()) {
+                        Log.d("CacheDeletion", "Deleted cache file: " + file);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

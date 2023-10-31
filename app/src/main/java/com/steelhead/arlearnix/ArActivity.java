@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.ar.core.Anchor;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.assets.RenderableSource;
+import com.google.ar.sceneform.math.Quaternion;
+import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
@@ -235,6 +237,10 @@ public class ArActivity extends AppCompatActivity {
             anchorNode.setParent(arFragment.getArSceneView().getScene());
             TransformableNode andy = new TransformableNode(arFragment.getTransformationSystem());
             andy.getScaleController().setMinScale(0.1f);
+
+            // Set the initial local position (adjust these values as needed)
+            andy.setLocalPosition(new Vector3(0.0f, 0.0f, 0.0f));
+
             andy.setParent(anchorNode);
             andy.setRenderable(renderable);
             andy.select();
@@ -257,7 +263,18 @@ public class ArActivity extends AppCompatActivity {
 
     private void destorytts() {
             // Stop the Text-to-Speech engine
+        if (tts != null) {
+            // Stop the Text-to-Speech engine
             tts.stop();
             tts.shutdown();
+            tts = null;  // Set tts to null to release the reference
         }
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        if (tts != null) {
+            destorytts();
+        }
+    }
 }

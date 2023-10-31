@@ -37,16 +37,7 @@
             android:src="@drawable/image" />
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:layout_width="140dp"
-        android:layout_height="60dp"
-        android:id="@+id/ImgAnly"
-        android:layout_below="@id/ImgPicker"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Find Object"
-        android:textSize="14sp"
-        android:textStyle="bold"/>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
